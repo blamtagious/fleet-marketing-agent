@@ -1,0 +1,4 @@
+organization,type,county,contact_name,title,email,phone,segment,notes
+"Example County Highway Department",county,Example,"Jane Doe","Highway Superintendent",jdoe@example.gov,615-555-0100,county,"Replaces two trucks per year; buys on cooperative contracts"
+"Example City Police Department",city,Example,"John Roe","Chief",jroe@examplecity.gov,615-555-0101,law_enforcement,"Four-unit Police Interceptor Utility inquiry at TACP expo"
+"Example Plumbing LLC",commercial,Rutherford,"Pat Smith","Owner",pat@exampleplumbing.example,615-555-0102,commercial,"Ford Pro Private Offer lead; Transit cargo"

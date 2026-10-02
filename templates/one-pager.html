@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{TITLE}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* Ford of Murfreesboro Fleet Sales one-pager. Navy header, orange accent bar, Barlow Condensed headlines, Source Sans 3 body. */
+  :root { --navy: #0B2A5B; --orange: #E8711A; --ink: #1A1A1A; --muted: #5B6470; --rule: #D9DEE5; }
+  @page { size: letter; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Source Sans 3", Arial, sans-serif; color: var(--ink); background: #fff; }
+  .page { width: 8.5in; min-height: 11in; margin: 0 auto; padding: 0 0 0.5in; }
+  header { background: var(--navy); color: #fff; padding: 0.45in 0.6in 0.35in; }
+  header .dept { font-family: "Barlow Condensed", sans-serif; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 13pt; opacity: 0.9; }
+  header h1 { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 30pt; line-height: 1.05; margin: 0.08in 0 0; }
+  header .tag { margin-top: 0.1in; font-size: 11.5pt; opacity: 0.9; }
+  .accent { height: 0.09in; background: var(--orange); }
+  main { padding: 0.35in 0.6in 0; }
+  h2 { font-family: "Barlow Condensed", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 15pt; color: var(--navy); margin: 0.22in 0 0.06in; }
+  p, li { font-size: 11pt; line-height: 1.45; margin: 0 0 0.08in; }
+  ul { padding-left: 0.2in; margin: 0; }
+  .steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.08in; margin-top: 0.08in; }
+  .step { border-top: 3px solid var(--navy); padding-top: 0.06in; }
+  .step.buyer { border-top-color: var(--orange); }
+  .step .n { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 18pt; color: var(--navy); line-height: 1; }
+  .step.buyer .n { color: var(--orange); }
+  .step .who { font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .step .t { font-size: 10pt; font-weight: 600; }
+  .cta { margin-top: 0.3in; border: 1px solid var(--rule); border-left: 6px solid var(--orange); padding: 0.16in 0.2in; }
+  .cta strong { font-family: "Barlow Condensed", sans-serif; font-size: 14pt; color: var(--navy); }
+  footer { margin: 0.3in 0.6in 0; padding-top: 0.1in; border-top: 1px solid var(--rule); font-size: 9pt; color: var(--muted); display: flex; justify-content: space-between; }
+  .needs { background: #FFF3CD; border: 1px dashed #B8860B; padding: 0 0.04in; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="dept">Ford of Murfreesboro Fleet Sales &nbsp;·&nbsp; Statewide Contract Dept</div>
+    <h1>{{TITLE}}</h1>
+    <div class="tag">Your Statewide Contract Dealer</div>
+  </header>
+  <div class="accent"></div>
+  <main>
+    <h2>{{SECTION_1_HEADING}}</h2>
+    <p>{{SECTION_1_BODY}}</p>
+
+    <h2>How buying works</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div class="who">Us</div><div class="t">Spec the vehicle</div></div>
+      <div class="step"><div class="n">2</div><div class="who">Us</div><div class="t">One written quote</div></div>
+      <div class="step buyer"><div class="n">3</div><div class="who">You</div><div class="t">Approve and issue the PO</div></div>
+      <div class="step"><div class="n">4</div><div class="who">Us</div><div class="t">Order and track</div></div>
+      <div class="step"><div class="n">5</div><div class="who">Us</div><div class="t">Upfit</div></div>
+      <div class="step"><div class="n">6</div><div class="who">Us</div><div class="t">Deliver and invoice</div></div>
+    </div>
+    <p style="margin-top:0.1in"><strong>Three things, one purchase:</strong> vehicle, upfit, paperwork.</p>
+
+    <h2>{{SECTION_2_HEADING}}</h2>
+    <ul>
+      <li>{{BULLET_1}}</li>
+      <li>{{BULLET_2}}</li>
+      <li>{{BULLET_3}}</li>
+    </ul>
+
+    <div class="cta">
+      <strong>{{CTA_HEADING}}</strong>
+      <p style="margin:0.04in 0 0">{{CTA_BODY}} Fleet line 615-785-9141 &nbsp;·&nbsp; {{REP_NAME}}, {{REP_EMAIL}}, {{REP_PHONE}}</p>
+    </div>
+  </main>
+  <footer>
+    <span>Ford of Murfreesboro · 1550 N.W. Broad St., Murfreesboro, TN 37129 · fordofmurfreesboro.com</span>
+    <span>Eligible agencies can buy on SWC 209. Confirm eligibility with your purchasing officer.</span>
+  </footer>
+</div>
+</body>
+</html>
