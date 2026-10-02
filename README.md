@@ -14,6 +14,7 @@ It drafts. A person approves and sends. Nothing it writes leaves the building on
 | Prospect research briefs per county, city or agency | `researcher` subagent using web search, budget books and annual financial reports, with source URLs |
 | Independent brand and compliance review | `brand-reviewer` subagent |
 | Lead list lookups for outreach | `search_leads` over `data/leads.csv` |
+| Half-page in-stock flyers per customer segment | `search_stock` over `data/stock.csv` plus `templates/half-page-flyer.html` |
 
 Every customer-facing draft passes a deterministic guardrail check (no prices, no lead-time promises, no eligibility claims, no named customers, no internal vocabulary, no exclamation marks, no retail language, opt-out on emails, correct routing) and is saved to `drafts/` with `status: needs_approval`.
 
@@ -61,9 +62,9 @@ knowledge/        the department brief as structured markdown; loaded into the s
 src/agent.ts      query() wiring: model, tools, permissions, subagents
 src/agents.ts     subagent definitions (copywriter, brand-reviewer, researcher, campaign-planner)
 src/guardrails.ts deterministic guardrail checker (pure, unit-tested)
-src/tools/        in-process MCP tools: guardrail_check, save_draft, list_drafts, fiscal_calendar, search_leads, open_items
+src/tools/        in-process MCP tools: guardrail_check, save_draft, list_drafts, fiscal_calendar, search_leads, search_stock, open_items
 src/cli.ts        one-shot and chat CLI
-templates/        one-pager HTML in the navy/orange, Barlow Condensed / Source Sans 3 style
+templates/        one-pager and half-page flyer HTML in the navy/orange, Barlow Condensed / Source Sans 3 style
 data/             lead list (see data/README.md)
 test/             node:test unit tests
 ```

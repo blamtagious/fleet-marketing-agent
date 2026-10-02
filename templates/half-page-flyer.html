@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{TITLE}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* Ford of Murfreesboro Fleet Sales half-page "in stock" flyer.
+     5.5 x 8.5 in. Two copies tile on one letter sheet. Navy header, orange accent bar.
+     Same flyer works as an email attachment (print to PDF) or pasted into an email body. */
+  :root { --navy: #0B2A5B; --orange: #E8711A; --ink: #1A1A1A; --muted: #5B6470; --rule: #D9DEE5; }
+  @page { size: letter; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Source Sans 3", Arial, sans-serif; color: var(--ink); background: #fff; }
+  .sheet { width: 8.5in; height: 11in; margin: 0 auto; display: flex; flex-direction: column; }
+  .flyer { width: 8.5in; height: 5.5in; display: flex; flex-direction: column; border-bottom: 1px dashed var(--rule); }
+  .flyer:last-child { border-bottom: 0; }
+  header { background: var(--navy); color: #fff; padding: 0.22in 0.45in 0.18in; display: flex; justify-content: space-between; align-items: flex-end; }
+  header .dept { font-family: "Barlow Condensed", sans-serif; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 10pt; opacity: 0.9; }
+  header h1 { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 22pt; line-height: 1.05; margin: 0.04in 0 0; }
+  header .tag { font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 11pt; text-align: right; opacity: 0.9; }
+  .accent { height: 0.07in; background: var(--orange); }
+  main { padding: 0.18in 0.45in 0; flex: 1; display: grid; grid-template-columns: 1.6fr 1fr; gap: 0.3in; }
+  h2 { font-family: "Barlow Condensed", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 12pt; color: var(--navy); margin: 0 0 0.06in; }
+  p, li, td, th { font-size: 9.5pt; line-height: 1.35; }
+  p { margin: 0 0 0.06in; }
+  table { border-collapse: collapse; width: 100%; }
+  th { text-align: left; font-family: "Barlow Condensed", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 8.5pt; color: var(--muted); border-bottom: 1.5px solid var(--navy); padding: 0 0.06in 0.03in 0; }
+  td { border-bottom: 1px solid var(--rule); padding: 0.045in 0.06in 0.045in 0; vertical-align: top; }
+  td.model { font-weight: 600; }
+  .note { font-size: 8.5pt; color: var(--muted); margin-top: 0.06in; }
+  aside .why { border-left: 4px solid var(--orange); padding-left: 0.12in; }
+  aside ul { padding-left: 0.18in; margin: 0; }
+  .cta { margin-top: 0.12in; background: #F3F5F8; padding: 0.1in 0.14in; }
+  .cta strong { font-family: "Barlow Condensed", sans-serif; font-size: 12pt; color: var(--navy); display: block; }
+  footer { padding: 0.06in 0.45in 0.12in; font-size: 7.5pt; color: var(--muted); display: flex; justify-content: space-between; border-top: 1px solid var(--rule); }
+</style>
+</head>
+<body>
+<div class="sheet">
+<!-- Flyer copy 1 -->
+<section class="flyer">
+  <header>
+    <div>
+      <div class="dept">Ford of Murfreesboro Fleet Sales · Statewide Contract Dept</div>
+      <h1>{{TITLE}}</h1>
+    </div>
+    <div class="tag">Your Statewide<br>Contract Dealer</div>
+  </header>
+  <div class="accent"></div>
+  <main>
+    <div>
+      <h2>{{STOCK_HEADING}}</h2>
+      <table>
+        <thead><tr><th>Model</th><th>Spec</th><th>Color</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="model">{{ROW_1_MODEL}}</td><td>{{ROW_1_SPEC}}</td><td>{{ROW_1_COLOR}}</td><td>{{ROW_1_STATUS}}</td></tr>
+          <tr><td class="model">{{ROW_2_MODEL}}</td><td>{{ROW_2_SPEC}}</td><td>{{ROW_2_COLOR}}</td><td>{{ROW_2_STATUS}}</td></tr>
+          <tr><td class="model">{{ROW_3_MODEL}}</td><td>{{ROW_3_SPEC}}</td><td>{{ROW_3_COLOR}}</td><td>{{ROW_3_STATUS}}</td></tr>
+          <tr><td class="model">{{ROW_4_MODEL}}</td><td>{{ROW_4_SPEC}}</td><td>{{ROW_4_COLOR}}</td><td>{{ROW_4_STATUS}}</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Availability as of {{AS_OF_DATE}}. Units sell on a first-PO basis. SWC 209 contract pricing applies for eligible agencies; your rep provides a written quote.</p>
+    </div>
+    <aside>
+      <div class="why">
+        <h2>{{WHY_HEADING}}</h2>
+        <ul>
+          <li>{{BULLET_1}}</li>
+          <li>{{BULLET_2}}</li>
+          <li>{{BULLET_3}}</li>
+        </ul>
+      </div>
+      <div class="cta">
+        <strong>{{CTA_HEADING}}</strong>
+        {{REP_NAME}} · {{REP_PHONE}}<br>{{REP_EMAIL}}<br>Fleet line 615-785-9141
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <span>Ford of Murfreesboro · 1550 N.W. Broad St., Murfreesboro, TN 37129</span>
+    <span>Eligible agencies can buy on SWC 209. Confirm eligibility with your purchasing officer.</span>
+  </footer>
+</section>
+<!-- Flyer copy 2: duplicate of copy 1 so two tile on one letter sheet. Delete for single-up. -->
+<section class="flyer">
+  <header>
+    <div>
+      <div class="dept">Ford of Murfreesboro Fleet Sales · Statewide Contract Dept</div>
+      <h1>{{TITLE}}</h1>
+    </div>
+    <div class="tag">Your Statewide<br>Contract Dealer</div>
+  </header>
+  <div class="accent"></div>
+  <main>
+    <div>
+      <h2>{{STOCK_HEADING}}</h2>
+      <table>
+        <thead><tr><th>Model</th><th>Spec</th><th>Color</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="model">{{ROW_1_MODEL}}</td><td>{{ROW_1_SPEC}}</td><td>{{ROW_1_COLOR}}</td><td>{{ROW_1_STATUS}}</td></tr>
+          <tr><td class="model">{{ROW_2_MODEL}}</td><td>{{ROW_2_SPEC}}</td><td>{{ROW_2_COLOR}}</td><td>{{ROW_2_STATUS}}</td></tr>
+          <tr><td class="model">{{ROW_3_MODEL}}</td><td>{{ROW_3_SPEC}}</td><td>{{ROW_3_COLOR}}</td><td>{{ROW_3_STATUS}}</td></tr>
+          <tr><td class="model">{{ROW_4_MODEL}}</td><td>{{ROW_4_SPEC}}</td><td>{{ROW_4_COLOR}}</td><td>{{ROW_4_STATUS}}</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Availability as of {{AS_OF_DATE}}. Units sell on a first-PO basis. SWC 209 contract pricing applies for eligible agencies; your rep provides a written quote.</p>
+    </div>
+    <aside>
+      <div class="why">
+        <h2>{{WHY_HEADING}}</h2>
+        <ul>
+          <li>{{BULLET_1}}</li>
+          <li>{{BULLET_2}}</li>
+          <li>{{BULLET_3}}</li>
+        </ul>
+      </div>
+      <div class="cta">
+        <strong>{{CTA_HEADING}}</strong>
+        {{REP_NAME}} · {{REP_PHONE}}<br>{{REP_EMAIL}}<br>Fleet line 615-785-9141
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <span>Ford of Murfreesboro · 1550 N.W. Broad St., Murfreesboro, TN 37129</span>
+    <span>Eligible agencies can buy on SWC 209. Confirm eligibility with your purchasing officer.</span>
+  </footer>
+</section>
+</div>
+</body>
+</html>

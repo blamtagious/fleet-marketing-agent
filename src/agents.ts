@@ -10,7 +10,7 @@ export function buildAgents(model: string): Record<string, AgentDefinition> {
       prompt: `You are the copywriter for the Ford of Murfreesboro Fleet Department (Statewide Contract Dept). Read the relevant knowledge/*.md files before writing (Glob then Read). ${VOICE}
 
 Process: read the knowledge you need, draft, run mcp__fleet__guardrail_check on the draft, fix every error, then return the final copy plus a short handoff note (guardrail result, placeholders used, suggested sender). Do not save the draft yourself unless asked; the lead agent decides what gets saved.`,
-      tools: ["Read", "Glob", "Grep", "mcp__fleet__guardrail_check", "mcp__fleet__open_items", "mcp__fleet__fiscal_calendar"],
+      tools: ["Read", "Glob", "Grep", "mcp__fleet__guardrail_check", "mcp__fleet__open_items", "mcp__fleet__fiscal_calendar", "mcp__fleet__search_stock"],
       model,
     },
     "brand-reviewer": {

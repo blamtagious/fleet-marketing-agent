@@ -6,6 +6,7 @@ import { checkGuardrails, formatReport, type ContentType } from "../guardrails.j
 import { DATA_DIR, DRAFTS_DIR, loadOpenItems } from "../knowledge.js";
 import { fiscalCalendar } from "./fiscalCalendar.js";
 import { searchLeads } from "./leads.js";
+import { searchStock } from "./stock.js";
 
 const CONTENT_TYPES = ["email", "one_pager", "social", "web", "handout", "letter", "internal", "other"] as const;
 
@@ -133,6 +134,30 @@ const searchLeadsTool = tool(
   { annotations: { readOnlyHint: true, openWorldHint: false } },
 );
 
+const searchStockTool = tool(
+  "search_stock",
+  "Search the in-stock and inbound unit list at data/stock.csv (stock_number, year, model, body_code, trim, drivetrain, color, upfit, status, segment, notes). Use it to build in-stock flyers and availability emails. Price columns are never returned. Filter by free text, model, segment or status (In stock / Arriving). Say so if the file is missing.",
+  {
+    query: z.string().optional().describe("Free text matched against every column"),
+    model: z.string().optional().describe("e.g. F-150, Police Interceptor Utility, Transit, F-350"),
+    segment: z.string().optional().describe("law_enforcement, county, city, state, school, utility, fire, nonprofit, commercial"),
+    status: z.string().optional().describe("In stock or Arriving"),
+    limit: z.number().int().min(1).max(200).optional().describe("Default 50"),
+  },
+  async ({ query, model, segment, status, limit }) => {
+    const path = join(DATA_DIR, "stock.csv");
+    if (!existsSync(path)) {
+      return {
+        content: [{ type: "text", text: "data/stock.csv is not present. Ask a rep for the current stock list in the format shown in data/stock.example.csv (no prices needed)." }],
+        isError: true,
+      };
+    }
+    const result = searchStock(readFileSync(path, "utf8"), { query, model, segment, status, limit: limit ?? 50 });
+    return { content: [{ type: "text", text: result }] };
+  },
+  { annotations: { readOnlyHint: true, openWorldHint: false } },
+);
+
 const openItems = tool(
   "open_items",
   "The list of facts the department has not yet supplied (proof points, contract details, lead-time ranges, approval rules). Check it before inventing anything and reference it in handoff notes.",
@@ -145,7 +170,7 @@ export const fleetServer = createSdkMcpServer({
   name: "fleet",
   version: "0.1.0",
   instructions: "Department-specific tools for the Ford of Murfreesboro fleet marketing agent.",
-  tools: [guardrailCheck, saveDraft, listDrafts, fiscalCalendarTool, searchLeadsTool, openItems],
+  tools: [guardrailCheck, saveDraft, listDrafts, fiscalCalendarTool, searchLeadsTool, searchStockTool, openItems],
   alwaysLoad: true,
 });
 
@@ -155,5 +180,6 @@ export const FLEET_TOOL_NAMES = [
   "mcp__fleet__list_drafts",
   "mcp__fleet__fiscal_calendar",
   "mcp__fleet__search_leads",
+  "mcp__fleet__search_stock",
   "mcp__fleet__open_items",
 ];

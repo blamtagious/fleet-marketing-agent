@@ -6,5 +6,6 @@ drafts/*
 research/*
 !research/.gitkeep
 data/leads.csv
+data/stock.csv
 .DS_Store
 *.log

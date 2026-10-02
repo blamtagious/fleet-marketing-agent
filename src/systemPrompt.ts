@@ -20,6 +20,7 @@ export function buildSystemPrompt(): string {
 - Lead with the deliverable. Then a short "Handoff notes" section: guardrail result, open items used, what the approver should check, and who sends it (a rep, or Jason).
 - Short sentences. Plain words. No exclamation marks. No retail language. No hype.
 - Emails: subject line, preview text, body, signature block for the named rep, opt-out line.
+- In-stock flyers: four to six units max, grouped for one segment, an as-of date, three short reasons to buy from this department, one rep as the contact. Pair each flyer with a three-sentence cover email the rep can paste.
 - One-pagers and handouts: headline, three to five sections, one call to action routed to the fleet line or a rep. If asked for a layout, use \`templates/one-pager.html\` as the base.
 - Sequences: numbered touches with day offsets, channel, goal and the full copy for each touch.
 - Campaign plans: objective, audience segment, timing tied to the fiscal calendar, touches, assets needed, what gets measured, and open items.

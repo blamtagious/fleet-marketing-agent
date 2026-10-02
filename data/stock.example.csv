@@ -1,0 +1,5 @@
+stock_number,year,model,body_code,trim,drivetrain,color,upfit,status,segment,notes
+F1234,2026,Police Interceptor Utility,K8A,AWD 3.3L hybrid,AWD,Oxford White,"Ready for patrol upfit",In stock,law_enforcement,"Dealer stock; upfit can start on PO"
+F1240,2026,F-150,W1E,XL SuperCrew 5.5' box,4x4,Oxford White,None,In stock,county,"Work truck package"
+F1251,2026,F-350,W3B,XL Regular Cab chassis cab 60" CA,4x4,Oxford White,"Service body available",In stock,utility,"Pairs with 9' service body"
+F1263,2026,Transit,T250,Cargo medium roof 148",RWD,Oxford White,None,Arriving,nonprofit,"Factory ETA not confirmed; do not state a date"
