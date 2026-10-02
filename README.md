@@ -25,6 +25,8 @@ npm install
 cp .env.example .env     # add ANTHROPIC_API_KEY, or log in with `claude` / `ant auth login`
 ```
 
+If the first run fails with "API key is not scoped to a workspace", either create the key inside a workspace in the console, or set `ANTHROPIC_WORKSPACE_ID` in `.env` to your workspace ID.
+
 Requires Node 20+. The model defaults to `claude-opus-5-5`; override with `FLEET_AGENT_MODEL`.
 
 ## Use

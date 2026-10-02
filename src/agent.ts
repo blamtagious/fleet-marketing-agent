@@ -25,6 +25,20 @@ export interface RunResult {
   ok: boolean;
 }
 
+/**
+ * Environment for the Claude Code engine. Organization-level API keys must name a workspace;
+ * setting ANTHROPIC_WORKSPACE_ID in .env adds the required header without a new key.
+ */
+function buildEnv(): Record<string, string | undefined> {
+  const env: Record<string, string | undefined> = { ...process.env };
+  const workspace = process.env.ANTHROPIC_WORKSPACE_ID?.trim();
+  if (workspace) {
+    const header = `anthropic-workspace-id: ${workspace}`;
+    env.ANTHROPIC_CUSTOM_HEADERS = env.ANTHROPIC_CUSTOM_HEADERS ? `${env.ANTHROPIC_CUSTOM_HEADERS}\n${header}` : header;
+  }
+  return env;
+}
+
 /** Run one turn of the fleet marketing agent and return the final text plus the session id for resuming. */
 export async function runFleetAgent(prompt: string, opts: RunOptions = {}): Promise<RunResult> {
   const model = opts.model ?? DEFAULT_MODEL;
@@ -43,6 +57,7 @@ export async function runFleetAgent(prompt: string, opts: RunOptions = {}): Prom
     permissionMode: "acceptEdits",
     resume: opts.resume,
     maxTurns: 80,
+    env: buildEnv(),
   };
 
   let text = "";
