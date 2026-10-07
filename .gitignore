@@ -1,10 +1,5 @@
 node_modules/
 .env
-drafts/*
-!drafts/.gitkeep
-!drafts/README.md
-research/*
-!research/.gitkeep
 data/leads.csv
 data/stock.csv
 .DS_Store

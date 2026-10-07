@@ -1,6 +1,6 @@
 # Drafts
 
-Every file here was written by the agent with `status: needs_approval`. Nothing in this folder has been sent.
+Every file here was written by the agent with `status: needs_approval`. Nothing in this folder has been sent. Drafts are committed to GitHub so they can be read from any device; the lead list and stock list are not.
 
 Approval flow:
 1. Open the draft, read the guardrail findings and handoff notes at the bottom.

@@ -18,6 +18,12 @@ It drafts. A person approves and sends. Nothing it writes leaves the building on
 
 Every customer-facing draft passes a deterministic guardrail check (no prices, no lead-time promises, no eligibility claims, no named customers, no internal vocabulary, no exclamation marks, no retail language, opt-out on emails, correct routing) and is saved to `drafts/` with `status: needs_approval`.
 
+## Two ways to use it
+
+**From any device, no setup:** open [claude.ai/code](https://claude.ai/code), start a session on this repository, and type the task. The session reads `CLAUDE.md`, the knowledge base and the subagents in `.claude/agents/`, runs the guardrail checker, and commits drafts to `drafts/` so they are readable on GitHub from a phone or iPad.
+
+**From a terminal:** the Claude Agent SDK app below, which uses the same knowledge base.
+
 ## Setup
 
 ```bash
@@ -54,8 +60,8 @@ npm run check -- drafts/<file>.md email
 
 Outputs:
 
-- `drafts/` customer-facing drafts with front matter, guardrail findings and handoff notes (git-ignored)
-- `research/` internal prospect briefs (git-ignored)
+- `drafts/` customer-facing drafts with front matter, guardrail findings and handoff notes (committed, so they are readable from any device)
+- `research/` internal prospect briefs (committed)
 
 ## Layout
 
