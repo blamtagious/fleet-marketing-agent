@@ -1,0 +1,28 @@
+stock_number,year,model,body_code,trim,drivetrain,color,upfit,status,quantity,segment,eta_internal,notes
+PU-01,2026,Police Interceptor Utility,K8A,Explorer PIU,AWD,White,Upfitted,In stock,2,law_enforcement,,Upfitted and on the ground
+PU-02,2027,Police Interceptor Utility,K8A,Explorer PIU,AWD,White,Not upfitted,Arriving,35,law_enforcement,middle of November,On order
+PU-03,2027,Police Interceptor Utility,K8A,Explorer PIU,AWD,Black,Not upfitted,Arriving,15,law_enforcement,TBD,On order
+PU-04,2026,F-150 Police Responder,,Police Responder,4x4,Black,None,In stock,1,law_enforcement,,
+PU-05,2026,F-150 Police Responder,,Police Responder with spotlight,4x4,White,None,Arriving,20,law_enforcement,middle to end of November,On order
+PU-06,2026,F-150 Police Responder,,Police Responder without spotlight,4x4,White,None,Arriving,8,law_enforcement,middle to end of November,On order
+SU-01,2026,Explorer,,Active 4x4 200A package,4x4,White,None,In stock,12,admin,,
+SU-02,2027,Explorer,,Active 4x4 100A package,4x4,White,None,In stock,17,admin,,
+SU-03,2027,Explorer,,Active 4x4 200A package,4x4,Gray,None,In stock,4,admin,,
+SU-04,2027,Explorer,,Active 4x4 200A package,4x4,Black,None,In stock,5,admin,,
+SU-05,2026,Bronco Sport,,Big Bend 4x4,4x4,Gray,None,In stock,1,admin,,
+SU-06,2026,Bronco Sport,,Big Bend 4x4,4x4,White,None,In stock,22,admin,,
+TR-01,2026,Maverick,,Crew Cab AWD,AWD,White,None,In stock,21,admin,,
+TR-02,2027,F-150,,Super Cab XL V8,4x4,White,None,Arriving,20,county,TBD,On order
+TR-03,2026,F-150,,Crew Cab XL V8,4x4,White,None,Arriving,34,county,end of October,On order
+TR-04,2026,F-250,,Regular Cab XL gas 8-foot bed,4x4,White,None,In stock,12,county,,
+TR-05,2026,F-250,,Super Cab XL gas 6.75-foot bed,4x4,White,None,In stock,14,county,,
+TR-06,2027,F-250,,Crew Cab XL gas 6.75-foot bed,4x4,White,None,In stock,5,county,,
+CC-01,2026,F-350 chassis cab,,Regular Cab gas 84-inch CA,4x2,White,Service or utility body available,In stock,3,utility,,
+CC-02,2027,F-350 chassis cab,,Super Cab gas,4x4,White,Service or utility body available,In stock,1,utility,,
+CC-03,2027,F-350 chassis cab,,Super Cab diesel,4x4,White,Service or utility body available,In stock,2,utility,,
+CC-04,2027,F-350 chassis cab,,Crew Cab gas,4x4,White,Service or utility body available,In stock,1,utility,,
+CC-05,2026,F-350 chassis cab,,Crew Cab diesel,4x4,White,Service or utility body available,In stock,7,utility,,
+CC-06,2026,F-550 chassis cab,,Regular Cab diesel 60-inch CA,4x4,White,Service or utility body available,In stock,1,utility,,
+CC-07,2026,F-550 chassis cab,,Super Cab diesel 60-inch CA,4x4,White,Service or utility body available,In stock,1,utility,,
+EV-01,2026,Mustang Mach-E,,Electric,AWD,White,None,In stock,3,admin,,
+VN-01,2026,Transit 350,,Medium roof passenger van,RWD,White,None,In stock,2,school,,

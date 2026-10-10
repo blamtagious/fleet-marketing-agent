@@ -66,10 +66,10 @@ Prospect research (county, city, agency) goes to `research/<slug>.md`. Internal 
 
 ## Data the reps supply
 
-- `data/stock.csv`: current in-stock and inbound units. Used for in-stock flyers and availability emails. Never include a price in output even if the file has one.
+- `data/stock.csv`: current in-stock and inbound units with quantities. Used for in-stock flyers and availability emails. Never include a price. Ignore the `eta_internal` column entirely; inbound units are described as inbound with timing confirmed at quote. "Explorer PIU" in the reps' lists means Police Interceptor Utility. When Jason pastes a new stock list, rewrite `data/stock.csv` in the same columns and commit it.
 - `data/leads.csv`: contact list for outreach. Treat as business contact data: accurate, minimal, opt-out on every email.
 
-Both are kept off GitHub. If a task needs one and it is missing, say so and offer to work from `data/stock.example.csv` or `data/leads.example.csv` with the output clearly marked as a sample.
+The stock list is committed (no prices, no customer data). The lead list is kept off GitHub. If a task needs the lead list and it is missing, say so and offer to work from `data/stock.example.csv` or `data/leads.example.csv` with the output clearly marked as a sample.
 
 ## Timing
 
