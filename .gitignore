@@ -25,3 +25,8 @@ data/leads.csv
 **/.impeccable/live/deferred-svelte-component-accepts.json
 **/.impeccable/live/*.png
 # impeccable-ignore-end
+
+# Impeccable engine binaries are per-machine downloads; the launcher fetches them on first run.
+.claude/skills/impeccable/scripts/bin/
+# Per-machine Claude Code settings (Impeccable hooks live here on the Mac).
+.claude/settings.local.json
