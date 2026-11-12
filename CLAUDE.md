@@ -75,6 +75,10 @@ The stock list is committed (no prices, no customer data). The lead list is kept
 
 Tennessee local governments run a July 1 to June 30 fiscal year. Budget planning is January to March, adoption April to June, new-money purchasing July to September, event season October to December. Anchor campaign timing to that. Contract pricing changes with each model year; order banks open on Ford's schedule and are never promised.
 
+## Design work (Impeccable)
+
+The `impeccable` skill in `.claude/skills/impeccable/` is installed for design quality on anything visual: the HTML email and flyer templates in `templates/`, HTML drafts in `drafts/`, and any future web page or app. Use `/impeccable critique <file>` to review a layout, `/impeccable polish <file>` to finish one, and `/impeccable init` once to write `PRODUCT.md` for this department. The brand is fixed by `knowledge/08-voice-brand.md` (Ford navy on white, orange accent, Barlow Condensed headlines, Source Sans 3 body, no retail flash); Impeccable improves craft within that, never replaces it. Its automatic design hooks are not enabled in this repo; run its commands on request. Its launcher downloads a helper binary from GitHub releases on first use; if that download is blocked, continue by reading the skill's reference files directly, as the skill itself instructs.
+
 ## For developers
 
 - `npm run typecheck` and `npm test` must pass before committing code.
